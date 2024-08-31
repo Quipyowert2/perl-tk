@@ -32,7 +32,7 @@ if ($^O eq 'MSWin32')
 else
  {
   $ENV{CC} = $Config{cc};
-  local $ENV{CFLAGS} = "$Config{ccflags} $Config{cccdlflags}";
+  local $ENV{CFLAGS} = "$Config{ccflags} $Config{optimize} $Config{cccdlflags}";
   local $ENV{LDFLAGS} = "$Config{ccflags} $Config{ldflags}";
   system(sh => "./configure");
  }
